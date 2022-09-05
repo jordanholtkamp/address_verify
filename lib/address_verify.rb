@@ -14,12 +14,13 @@ csv_text.each do |address_input_row|
 
     address_hash = FormatApiRequest.new(address_input_row).create_data_hash
 
+    if ENV['ADDRESS_API_KEY'].nil?
+        print "Set environment variable named 'ADDRESS_API_KEY' to make API call"
+    end
+
     address_api_response = AddressService.new(address_hash).parsed_response
 
     formatted_console_output = FormatOutput.new(address_api_response, address_input_row).format_console_output
 
     puts formatted_console_output
-    # api call
-    
-    # for each address and then return
 end
