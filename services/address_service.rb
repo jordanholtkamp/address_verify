@@ -9,7 +9,7 @@ class AddressService
     end
 
     def parsed_response
-        JSON.parse(address_response.body, symbolize_names: true)
+        JSON.parse(address_response.body)
     end
 
     private

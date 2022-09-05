@@ -18,11 +18,11 @@ class FormatOutput
     end
 
     def format_address_response
-        street_address = @json_response[0][:delivery_line_1]
-        city = @json_response[0][:components][:city_name]
+        street_address = @json_response[0]["delivery_line_1"]
+        city = @json_response[0]["components"]["city_name"]
 
-        first_four_zip = @json_response[0][:components][:zipcode]
-        plus4 = @json_response[0][:components][:plus4_code]
+        first_four_zip = @json_response[0]["components"]["zipcode"]
+        plus4 = @json_response[0]["components"]["plus4_code"]
 
         full_zipcode = "#{first_four_zip}-#{plus4}"
         "#{street_address}, #{city}, #{full_zipcode}"
