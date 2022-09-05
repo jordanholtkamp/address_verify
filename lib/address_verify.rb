@@ -4,9 +4,11 @@ require_relative '../services/address_service'
 require_relative './format_output'
 require 'dotenv/load'
 
-csv_text = CSV.read(ARGV[0])
+if ARGV[0].nil?
+    print "Please put in a CSV file as a command line argument\n"
+end
 
-address_hash = {}
+csv_text = CSV.read(ARGV[0])
 
 csv_text.each do |address_input_row|
 
