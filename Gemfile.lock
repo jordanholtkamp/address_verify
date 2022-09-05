@@ -33,6 +33,7 @@ GEM
       rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
     ruby2_keywords (0.0.5)
+    vcr (6.1.0)
     webmock (3.18.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -46,6 +47,7 @@ DEPENDENCIES
   faraday
   pry
   rspec
+  vcr
   webmock
 
 BUNDLED WITH

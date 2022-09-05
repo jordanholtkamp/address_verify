@@ -14,8 +14,9 @@ csv_text.each do |address_input_row|
 
     address_api_response = AddressService.new(address_hash).parsed_response
 
-    FormatOutput.new(address_api_response, address_input_row).format_console_output
+    formatted_console_output = FormatOutput.new(address_api_response, address_input_row).format_console_output
 
+    puts formatted_console_output
     # api call
     
     # for each address and then return

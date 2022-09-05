@@ -8,13 +8,13 @@ class FormatOutput
         if @json_response.empty?
             invalid_input
         else
-            puts @original_input.join(", ") + " -> " + format_address_response
+            @original_input.join(", ") + " -> " + format_address_response
         end
     end
 
     def invalid_input
         string_input = @original_input.join(", ")
-        puts "#{string_input} -> Invalid Address"
+        "#{string_input} -> Invalid Address"
     end
 
     def format_address_response
