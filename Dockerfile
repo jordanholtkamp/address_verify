@@ -1,7 +1,6 @@
 FROM ruby
 
 RUN mkdir /usr/src/app
-RUN echo "asdff"
 ADD . /usr/src/app/
 WORKDIR /usr/src/app/
 
