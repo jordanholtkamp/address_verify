@@ -7,7 +7,7 @@ addresses. Address Verify was built in Ruby 2.7.2. The application accepts a CSV
 ## Usage
 #### Run using Docker
 * To simplify running the code for this application, I put it into a Docker image container. 
-* Simply run and build the Dockerfile with `docker run -e ADDRESS_API_KEY='YOUR_API_KEY_VALUE' $(docker build -q .)`
+* Simply run and build the Dockerfile with `docker run -e ADDRESS_API_KEY=YOUR_API_KEY_VALUE $(docker build -q .)`
 
 ## Testing
 To run the test suite, cd into the project directory and run `rspec`. The testing suite leverages webmock and VCR to
