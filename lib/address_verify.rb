@@ -9,7 +9,12 @@ csv_file = ARGV[0]
 
 address_service.validate_input(csv_file)
 
-csv_text = CSV.read(ARGV[0])
+begin
+    csv_text = CSV.read(ARGV[0])
+rescue Errno::ENOENT
+    puts "LOG.ERROR: File not found"
+    exit!
+end
 
 csv_text.each do |address_input_row|
     address_hash = address_service.create_data_hash(address_input_row)
