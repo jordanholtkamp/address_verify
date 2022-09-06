@@ -5,7 +5,8 @@ class AddressService
 
     def validate_input(csv_file)
         if csv_file.nil?
-            puts "Please put in a CSV file as a command line argument\n"
+            puts "LOG.ERROR: Please put in a CSV file as a command line argument\n"
+            exit!
         end
     end
 
