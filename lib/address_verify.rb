@@ -4,19 +4,21 @@ require_relative '../services/address_service'
 require_relative './format_output'
 require 'dotenv/load'
 
-if ARGV[0].nil?
-    print "Please put in a CSV file as a command line argument\n"
-end
+address_service = AddressService.new
+csv_file = ARGV[0]
+
+address_service.validate_input(csv_file)
 
 csv_text = CSV.read(ARGV[0])
 
 csv_text.each do |address_input_row|
+    address_hash = address_service.create_data_hash(address_input_row)
 
-    address_hash = FormatApiRequest.new(address_input_row).create_data_hash
+    connection = address_service.make_api_call
+    api_response = address_service.get_response(connection, address_hash)
+    parsed_json = address_service.parsed_response(api_response)
 
-    address_api_response = AddressService.new(address_hash).parsed_response
-
-    formatted_console_output = FormatOutput.new(address_api_response, address_input_row).format_console_output
+    formatted_console_output = address_service.format_output(parsed_json, address_input_row)
 
     puts formatted_console_output
 end
