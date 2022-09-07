@@ -1,7 +1,5 @@
 require 'csv'
-require_relative './format_api_request'
-require_relative '../services/address_service'
-require_relative './format_output'
+require_relative './address_service'
 require 'dotenv/load'
 
 address_service = AddressService.new
@@ -21,7 +19,7 @@ csv_text.each do |address_input_row|
 
     connection = address_service.make_api_call
     api_response = address_service.get_response(connection, address_hash)
-    parsed_json = address_service.parsed_response(api_response)
+    parsed_json = address_service.parse_response(api_response)
 
     formatted_console_output = address_service.format_output(parsed_json, address_input_row)
 

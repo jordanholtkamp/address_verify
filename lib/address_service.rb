@@ -40,7 +40,7 @@ class AddressService
         return 'localhost'
     end
 
-    def parsed_response(api_response)
+    def parse_response(api_response)
         JSON.parse(api_response.body)
     end
 
