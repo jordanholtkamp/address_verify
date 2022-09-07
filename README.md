@@ -11,8 +11,7 @@ addresses. Address Verify was built in Ruby 2.7.2. The application accepts a CSV
 * `lib` - handles all of the logic of the application in:
     1. `address_verify.rb` which is the runner of the application. It calls the methods of the address service in a linear fashion, slowly building the api request, making the api call, and formatting the output to be returned to the command line.
     2. `address_service.rb` contains all of the logic for the program.
-* `spec`
-    1. Houses the tests for this program.
+* `spec` -  Houses the tests for this program.
 
 ## Assumptions
 ### API Key
