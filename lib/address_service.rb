@@ -1,8 +1,15 @@
 require 'faraday'
 require 'json'
 
+##
+# This class holds all of the logic to validate a csv file, 
+# take in the data, make an api request, handle and parse 
+# the response to json, and format the output for the console.
+
 class AddressService
 
+    ##
+    # Takes in a csv file, does a nil check, exits program if nil
     def validate_input(csv_file)
         if csv_file.nil?
             puts "LOG.ERROR: Please put in a CSV file as a command line argument\n"
