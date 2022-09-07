@@ -8,7 +8,9 @@ addresses. Address Verify was built in Ruby 2.7.2. The application accepts a CSV
 * `fixtures` 
     1. Holds a json file with an api response for testing purposes
     2. A vcr_cassettes directory with a YML file that has a cassette for the test that calls the API. This is basically a stored request and response so the test can call this rather than making a constant call to the external API.
-* `lib`
+* `lib` - handles all of the logic of the application in:
+    1. `address_verify.rb` which is the runner of the application. It calls the methods of the address service in a linear fashion, slowly building the api request, making the api call, and formatting the output to be returned to the command line.
+    2. `address_service.rb` contains all of the logic for the program.
 
 ## Assumptions
 #### API Key
