@@ -48,6 +48,7 @@ describe AddressService, type: :model do
         output = AddressService.new.invalid_input(address)
     end
 
+    # Messes up rspec console output
     # it 'handles no csv file argument' do
     #     address_service = AddressService.new
 
