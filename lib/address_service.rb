@@ -9,7 +9,8 @@ require 'json'
 class AddressService
 
     ##
-    # Takes in a csv file, does a nil check, exits program if nil.
+    # Takes in a csv file, does a nil check, exits program and 
+    # prints message to the console if nil.
 
     def validate_input(csv_file)
         if csv_file.nil?
