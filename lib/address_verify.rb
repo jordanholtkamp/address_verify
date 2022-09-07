@@ -7,6 +7,19 @@ csv_file = ARGV[0]
 
 address_service.validate_input(csv_file)
 
+##
+# Make sure the API key is set either locally or using the docker
+# build command.
+
+if ENV['ADDRESS_API_KEY'].nil?
+    puts "LOG.ERROR: No API key set. Please set the environment 
+    variable 'ADDRESS_API_KEY' either locally or in the docker command."
+    exit!
+end
+
+##
+# Make sure a valid csv file is input as a command line argument
+
 begin
     csv_text = CSV.read(ARGV[0])
 rescue Errno::ENOENT
